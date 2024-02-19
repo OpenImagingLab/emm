@@ -2,7 +2,7 @@
 # Event-Based Motion Magnification
 ### [Project Page](https://openimaginglab.github.io/emm/) | [Video](https://youtu.be/WmI7bv9nqjI) | [Paper]() | [Data]() <br>
 
-#### Yutian Chen, Shi Guo, Fangzheng Yu, Feng Zhang, Jinwei Gu, Tianfan Xue <br><br>
+Yutian Chen, Shi Guo, Fangzheng Yu, Feng Zhang, Jinwei Gu, Tianfan Xue <br><br>
 
 - [ ] Release the real-captured dataset
 - [ ] Release the synthetic testset.
