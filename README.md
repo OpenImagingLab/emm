@@ -30,7 +30,7 @@ bash train.sh
 ```
 
 ### Test
-To test the EMM model with [real-captured video](https://pjlab-my.sharepoint.cn/:f:/g/personal/chenyutian_pjlab_org_cn/EqHiiCOR3TdNiN6h0598eKkBD5Qucmz9hsSi0nYaE3iuyw?e=Y1UmYi):
+To test the EMM model with real-captured video:
 ```
 bash test.sh
 ```  
