@@ -1,0 +1,8 @@
+foreground_min: 5
+foreground_max: 10
+foreground_scale_max: 6.0
+foreground_scale_min: 8.0
+# motion_max: 1
+mag_min: 20
+mag_max: 60
+motion_num: 30

@@ -1,0 +1,71 @@
+# general settings
+name: Test_motion_mag_1902_ball # XNet_convgru_deblurvoxel #XXNet 
+model_type: TestEventBasedMotionMagModel
+scale: 1
+num_gpu: 1 # 4
+manual_seed: 10
+alpha: 80
+datasets:
+  val:
+    name: gopro-twoblur-test
+    type: TestEventMagRecurrentDataset
+    dataroot: /mnt/workspace/chenyutian/project/EMM/datasets/tuning_fork
+    # dataroot: ./datasets/UND_11_1
+
+    # interpolation settings
+    num_end_interpolation: 1 # m
+    num_inter_interpolation: 79 # n
+    # voxel settings
+    norm_voxel: true
+    one_voxel_flag: true
+    return_deblur_voxel: false
+
+    io_backend:
+      type: disk
+
+    gt_size: ~
+    use_hflip: false
+    use_rot: false
+
+dataset_name: UND
+
+
+
+# network structures
+network_g:
+  type: EvsMotionMagFilterNet 
+  img_chn: 3 # 6 for two image, 26 for image and voxel
+  ev_chn: 2
+  num_encoders: 2
+  base_num_channels: 32
+  num_block: 1  # num_block of blocks in each encoder
+  num_residual_blocks: 2 # num_block of resblock in the bottleneck of unet
+  # for temporal filter
+  enable_filter: True
+  # fl: 0.1
+  # fh: 20 # ball
+  fl: 220
+  fh: 280
+  # use_first_dcn: false
+
+
+# path
+path:
+  pretrain_network_g: /mnt/workspace/chenyutian/project/EMM/checkpoint/net_g_200000.pth
+  resume_state: ~ 
+  root: /mnt/data/sail_3090/chenyutian/project/EMM  # set this option ONLY in TEST!!!
+
+# validation settings
+val:
+  save_img: true  
+  save_gt: false
+  grids: ~  
+  crop_size: ~
+
+
+
+# dist training settings
+dist_params:
+  backend: nccl
+  port: 29500
+

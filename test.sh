@@ -1,0 +1,1 @@
+python basicsr/test.py -opt options/test.yml
