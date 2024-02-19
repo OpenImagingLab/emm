@@ -9,6 +9,11 @@ Yutian Chen, Shi Guo, Fangzheng Yu, Feng Zhang, Jinwei Gu, Tianfan Xue <br><br>
 - [x] Release the training and testing code.
 - [x] Release the pretrained model.
 
+<p align="center" width="100%">
+    <img src="docs/static/images/teaser.gif"  width="90%" >
+</p>
+<br>
+
 ## Installation
 This implementation based on [BasicSR](https://github.com/xinntao/BasicSR) which is a open source toolbox for image/video restoration tasks. 
 
