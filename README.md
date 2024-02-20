@@ -45,13 +45,11 @@ bash test.sh
 
 ## Citations
 ```
-@misc{chen2024eventbased,
+@article{chen2024eventbased,
       title={Event-Based Motion Magnification}, 
       author={Yutian Chen and Shi Guo and Fangzheng Yu and Feng Zhang and Jinwei Gu and Tianfan Xue},
-      year={2024},
-      eprint={2402.11957},
-      archivePrefix={arXiv},
-      primaryClass={cs.CV}
+      journal={arXiv preprint arXiv:2402.11957},
+      year={2024}
 }
 ```
 
