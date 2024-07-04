@@ -120,7 +120,7 @@ class EvsMotionMagFilterNet(FinalDecoderRecurrentUNet):
 
     def __init__(self, img_chn, ev_chn, out_chn=3, skip_type='sum',
                  recurrent_block_type='convlstm', activation='sigmoid', num_encoders=3, num_decoder_MN = 2, base_num_channels=32,
-                 num_residual_blocks=2, enable_filter = True, fl=20, fh = 30, norm=None, use_recurrent_upsample_conv=True, num_block=3, use_first_dcn=False, use_reversed_voxel=False):
+                 num_residual_blocks=2, enable_filter = True, fl=20, fh = 30, rgb_freq = 20,norm=None, use_recurrent_upsample_conv=True, num_block=3, use_first_dcn=False, use_reversed_voxel=False):
         super(EvsMotionMagFilterNet, self).__init__(img_chn, ev_chn, out_chn, skip_type, activation,
                                             num_encoders, num_decoder_MN,base_num_channels, num_residual_blocks, norm,
                                             use_recurrent_upsample_conv)
@@ -186,6 +186,7 @@ class EvsMotionMagFilterNet(FinalDecoderRecurrentUNet):
         self.enable_filter = enable_filter
         self.fl = fl
         self.fh = fh
+        self.rgb_freq = rgb_freq
 
     def forward(self, x, event ,alpha = 40):
         """
@@ -274,7 +275,7 @@ class EvsMotionMagFilterNet(FinalDecoderRecurrentUNet):
             # hyper param
             n_filter_tap = t
             
-            fs = t*20
+            fs = t*self.rgb_freq
             # fs = 60
             
             filter_b = firwin(n_filter_tap, [self.fl, self.fh], fs=fs, pass_zero=False)

@@ -46,6 +46,7 @@ network_g:
   # fh: 20 # ball
   fl: 220
   fh: 280
+  rgb_freq: 20
   # use_first_dcn: false
 
 
